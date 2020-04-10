@@ -19,6 +19,7 @@ const (
 
 var settings = map[string]string{
 	"config_path":       "./runner.conf",
+	"cmd":               ".",
 	"root":              ".",
 	"tmp_path":          "./tmp",
 	"build_name":        "runner-build",
@@ -107,6 +108,10 @@ func getenv(key, defaultValue string) string {
 	}
 
 	return defaultValue
+}
+
+func cmd() string {
+	return settings["cmd"]
 }
 
 func root() string {
